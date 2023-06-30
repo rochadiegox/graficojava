@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video | Google Charts</title>
+</head>
+<body>
+    <div id="chart"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+  google.charts.load('current', {packages: ['corechart'] })
+  google.charts.setOnLoadCallback(drawChart)
+
+  function drawChart() {
+    const container = document.querySelector('#chart')
+    const data = new google.visualization.arrayToDataTable([
+        [ 'Meses', '2023'],
+        [ 'Janeiro', 1 ],
+        [ 'Fevereiro', 2 ],
+        [ 'Março', 3 ],
+        [ 'Abril', 4 ],
+        [ 'Maio', 5 ],
+        [ 'Junho', 6 ],
+        [ 'Julho', 7 ],
+        [ 'Agosto', 8 ],
+        [ 'Setembro', 9 ],
+        [ 'Outubro', 10 ],
+        [ 'Novembro', 11 ],
+        [ 'Dezembro', 12 ]
+
+
+
+    ])
+    const options = {
+        title: 'Medições por Mês a Mês',
+        height: 400,
+        width: 820
+  }
+    const chart = new google.visualization.ColumnChart(container)
+    chart.draw(data, options)
+  }
+</script>   
+</body>
+</html>
